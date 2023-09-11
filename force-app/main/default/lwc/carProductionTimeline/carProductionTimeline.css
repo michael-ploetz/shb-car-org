@@ -1,0 +1,5 @@
+.page-header_border-bottom {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: var(--lwc-borderWidthThin, 1px) solid rgb(201, 201, 201);
+}

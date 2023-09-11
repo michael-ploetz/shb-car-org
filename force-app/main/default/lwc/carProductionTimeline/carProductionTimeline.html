@@ -1,0 +1,62 @@
+<template>
+    <lightning-spinner lwc:if={loading}>
+
+    </lightning-spinner>
+
+    <div lwc:if={car} class="slds-card slds-card_boundary">
+
+        <div class="slds-page-header page-header_border-bottom">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-standard-settings" title="settings">
+                                <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                    <use xlink:href="/_slds/icons/standard-sprite/svg/symbols.svg#settings"></use>
+                                </svg>
+                                <span class="slds-assistive-text">settings</span>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate" title="settings">Produktion</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-page-header__col-actions">
+                    <div class="slds-page-header__controls">
+                        <div class="slds-page-header__control">
+                            <lightning-button-group >
+                                <lightning-button-icon variant="border-filled" size="medium" icon-name="utility:refresh" onclick={handleRefresh}></lightning-button-icon>
+                                <lightning-button-icon variant="border-filled" size="medium" icon-name={toggleIcon} onclick={handleToggle}></lightning-button-icon>
+                            </lightning-button-group>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <lightning-datatable lwc:if={isTableMode} hide-checkbox-column data={car.events} columns={eventColumns} key-field="label" >
+
+        </lightning-datatable>
+
+        <div lwc:else>
+            <ul class="slds-timeline slds-p-around_small">
+                <template for:each={car.events} for:item="event">
+                    <c-car-production-timeline-item event={event} key={event.Id} >
+
+                    </c-car-production-timeline-item>
+                </template>
+            </ul>
+        </div>
+
+
+    </div>
+</template>

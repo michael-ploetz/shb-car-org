@@ -1,0 +1,42 @@
+<template>
+    <li>
+        <div class={itemClass}>
+            <span class="slds-assistive-text">task</span>
+            <div class="slds-media">
+                <div class="slds-media__figure">
+                    <button class="slds-button slds-button_icon" title="toggle" aria-controls="task-item-expanded-81" aria-expanded="true" onclick={handleToggle}>
+                        <svg class="slds-button__icon slds-timeline__details-action-icon" aria-hidden="true">
+                            <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#switch"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Toggle details for Review proposals for EBC deck with larger team and have marketing review this</span>
+                    </button>
+                    <div class={iconClass} title="task">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                            <use xlink:href={itemIcon}></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="slds-media__body">
+                    <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                            <h3 class="slds-truncate" title="Review proposals for EBC deck with larger team and have marketing review this" onclick={handleToggle}>
+                                <a href="#">
+                                    <strong>{event.label}</strong>
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                            <lightning-formatted-date-time value={event.createdDate} year="numeric" month="2-digit" day="numeric" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                        </div>
+                    </div>
+                    <article class="slds-box slds-timeline__item_details slds-theme_shade slds-m-top_x-small slds-m-horizontal_xx-small slds-p-around_medium" id="task-item-expanded-81">
+                        <div>
+                            <span class="slds-text-title">Description</span>
+                            <p class="slds-p-top_x-small">{event.description}</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </li>
+</template>

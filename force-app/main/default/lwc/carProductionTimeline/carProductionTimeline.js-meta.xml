@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <description>Car Production Timeline</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Car Production Timeline</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Car__c</object>
+            </objects>
+            <property name="recordId" type="String" label="Record Id"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
