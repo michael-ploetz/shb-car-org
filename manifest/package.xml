@@ -3,6 +3,7 @@
     <types>
         <members>CarApi</members>
         <members>CarProductionTimelineController</members>
+        <members>CarTriggerHandler</members>
         <name>ApexClass</name>
     </types>
     <types>
